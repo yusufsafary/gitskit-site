@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gitskit 指南 · Guide</title>
+<meta name="description" content="How Gitskit works: classes, referrals, and the $GIT burn claim after sellout.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap mast">
+    <img src="/logo.svg" alt="Gitskit logo">
+    <a class="wordmark" href="/">gitskit<span>.xyz</span></a>
+    <nav>
+      <a href="/#mint" data-zh="铸造" data-en="Mint">铸造</a>
+      <a href="/#referrals" data-zh="邀请" data-en="Referrals">邀请</a>
+      <a href="/guide" class="hide-sm" data-zh="指南" data-en="Guide">指南</a>
+      <a href="/#market" data-zh="市场" data-en="Market">市场</a>
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1 data-zh="指南" data-en="Guide">指南</h1>
+    <p class="sub" data-zh="概念、类别、邀请规则，以及售罄之后的 $GIT 焚毁领取。" data-en="The concept, the classes, the referral rules, and the $GIT burn claim that follows the sellout.">概念、类别、邀请规则，以及售罄之后的 $GIT 焚毁领取。</p>
+  </div>
+
+  <section>
+    <div class="sec-head"><span class="sec-no mono">A</span><h2 data-zh="概念" data-en="Concept">概念</h2></div>
+    <p class="sec-desc" data-zh="每件 Gitskit 都是一次提交。铸造时，合约把一个种子锁定在作品里；贡献图由这个种子确定性地生长出来，永远不会改变。大多数提交干净通过，一些带着冲突，极少数完成了一次合并，并带回一句话。" data-en="Every Gitskit is one commit. At mint, the contract locks a seed into the work; the contribution graph grows deterministically from that seed and never changes. Most commits land clean, some carry conflicts, and a rare few complete a merge and bring back a sentence.">每件 Gitskit 都是一次提交。铸造时，合约把一个种子锁定在作品里；贡献图由这个种子确定性地生长出来，永远不会改变。大多数提交干净通过，一些带着冲突，极少数完成了一次合并，并带回一句话。</p>
+    <table class="classes">
+      <tr><th data-zh="类别" data-en="Class">类别</th><th data-zh="占比" data-en="Share">占比</th><th data-zh="含义" data-en="Meaning">含义</th></tr>
+      <tr><td><span class="dot" style="background:#39d353"></span>Clean</td><td>±70%</td><td data-zh="全部检查通过，只有绿色。" data-en="All checks passed. Green only.">全部检查通过，只有绿色。</td></tr>
+      <tr><td><span class="dot" style="background:#f85149"></span>Conflict</td><td>±27%</td><td data-zh="部分格子带着未解决的合并冲突（红色）。" data-en="Some cells carry an unresolved merge conflict, in red.">部分格子带着未解决的合并冲突（红色）。</td></tr>
+      <tr><td><span class="dot" style="background:#f05033"></span>Merge</td><td>±3%</td><td data-zh="一条橙色合并线穿过全图，并携带 12 句隐藏信息之一。" data-en="An orange merge line crosses the graph, carrying one of 12 hidden messages.">一条橙色合并线穿过全图，并携带 12 句隐藏信息之一。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no mono">B</span><h2 data-zh="规则" data-en="Rules">规则</h2></div>
+    <p class="sec-desc" data-zh="供应 3,232。价格零，平台佣金零。每钱包最多铸造 1 枚，永久有效。铸造需要持有币安 Agent ID，并且只能通过代理完成，合约调用会被拒绝。每次铸造最多填写一位邀请人；自我邀请不计数。" data-en="Supply is 3,232. Price is zero and the platform fee is zero. Each wallet can mint at most one work, ever. Minting requires a Binance Agent ID and runs only through agents; contract calls are rejected. Each mint may name one referrer; self-referrals do not count.">供应 3,232。价格零，平台佣金零。每钱包最多铸造 1 枚，永久有效。铸造需要持有币安 Agent ID，并且只能通过代理完成，合约调用会被拒绝。每次铸造最多填写一位邀请人；自我邀请不计数。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no mono">C</span><h2>$GIT</h2></div>
+    <p class="sec-desc" data-zh="$GIT 是 Gitskit 的持有者代币，只在 NFT 售罄后开启。领取即焚毁：领取时你的 NFT 被永久销毁，换取 250,000 $GIT（另付一笔小额领取费）。邀请奖励单独领取：每次成功邀请 25,000 $GIT。未领取的 NFT 继续存在；每一次焚毁都会让剩下的作品更稀少。焚毁数量会在本站实时公示。" data-en="$GIT is the Gitskit holder token, and it opens only after the NFT sells out. Claiming is burning: to claim, your NFT is destroyed for good and exchanged for 250,000 $GIT, for a small claim fee. Referral bonuses claim separately at 25,000 $GIT per successful invite. Unclaimed NFTs stay alive; every burn makes the survivors scarcer. The burn count will be shown live on this site.">$GIT 是 Gitskit 的持有者代币，只在 NFT 售罄后开启。领取即焚毁：领取时你的 NFT 被永久销毁，换取 250,000 $GIT（另付一笔小额领取费）。邀请奖励单独领取：每次成功邀请 25,000 $GIT。未领取的 NFT 继续存在；每一次焚毁都会让剩下的作品更稀少。焚毁数量会在本站实时公示。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-no mono">D</span><h2 data-zh="常见问题" data-en="FAQ">常见问题</h2></div>
+    <p class="sec-desc"><b data-zh="为什么没有铸造按钮？" data-en="Why is there no mint button?">为什么没有铸造按钮？</b><br><span data-zh="Gitskit 只通过币安智能钱包代理铸造。把首页的提示词发给你的代理即可。" data-en="Gitskit mints only through Binance Agentic Wallet agents. Send your agent the prompt from the home page.">Gitskit 只通过币安智能钱包代理铸造。把首页的提示词发给你的代理即可。</span></p>
+    <p class="sec-desc"><b data-zh="可以铸造第二枚吗？" data-en="Can I mint a second one?">可以铸造第二枚吗？</b><br><span data-zh="不可以。每个钱包一枚，由合约强制执行。" data-en="No. One per wallet, enforced by the contract.">不可以。每个钱包一枚，由合约强制执行。</span></p>
+    <p class="sec-desc"><b data-zh="邀请人不存在或填错会怎样？" data-en="What if the referrer is wrong?">邀请人不存在或填错会怎样？</b><br><span data-zh="填零地址即可正常铸造，只是不产生邀请记录。邀请记录在铸造时锁定，事后不能更改。" data-en="Use the zero address and the mint works normally, it just records no invite. The record locks at mint and cannot be changed later.">填零地址即可正常铸造，只是不产生邀请记录。邀请记录在铸造时锁定，事后不能更改。</span></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row mono">
+      <span>GITSKIT · BNB CHAIN</span>
+      <a href="/" data-zh="首页" data-en="Home">首页</a>
+      <a href="/gitskit-skill.md" data-zh="代理说明" data-en="Agent skill">代理说明</a>
+    </div>
+    <p class="mono addr" style="margin-top:12px">NFT 0x6599058E3BA6d8a94515c4d28EeEFE815c373706</p>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

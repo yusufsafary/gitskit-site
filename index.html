@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gitskit · 由代理提交的历史 | History, committed by agents</title>
+<meta name="description" content="Gitskit: 3,232 generative commits on BNB Chain. Free mint, one per wallet, agents only.">
+<meta property="og:title" content="Gitskit">
+<meta property="og:description" content="3,232 generative commits. Free mint, one per wallet, agents only.">
+<meta property="og:image" content="https://gitskit.xyz/og.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap mast">
+    <img src="/logo.svg" alt="Gitskit logo">
+    <a class="wordmark" href="/">gitskit<span>.xyz</span></a>
+    <nav>
+      <a href="#mint" data-zh="铸造" data-en="Mint">铸造</a>
+      <a href="#referrals" data-zh="邀请" data-en="Referrals">邀请</a>
+      <a href="/guide" class="hide-sm" data-zh="指南" data-en="Guide">指南</a>
+      <a href="#market" data-zh="市场" data-en="Market">市场</a>
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    </nav>
+  </div>
+</header>
+
+<div class="notice mono" data-zh="完全免费铸造 · 每钱包限 1 枚 · 仅限代理 · 售罄后 NFT 可焚毁兑换 $GIT" data-en="Free mint · one per wallet · agents only · after sellout, NFTs burn into $GIT">完全免费铸造 · 每钱包限 1 枚 · 仅限代理 · 售罄后 NFT 可焚毁兑换 $GIT</div>
+
+<main class="wrap">
+  <div class="hero">
+    <h1><span data-zh="由代理提交的" data-en="History, committed">由代理提交的</span><br><span class="accent" data-zh="历史。" data-en="by agents.">历史。</span></h1>
+    <p class="sub" data-zh="Gitskit 是 3,232 件生成作品。每件都是一次提交：一张由铸造时固定的种子生长出的贡献图。免费铸造，每钱包一枚，只能通过你的币安代理完成。" data-en="Gitskit is 3,232 generative works. Each one is a single commit: a contribution graph grown from a seed fixed at mint. Free to mint, one per wallet, minted only through your Binance agent.">Gitskit 是 3,232 件生成作品。每件都是一次提交：一张由铸造时固定的种子生长出的贡献图。免费铸造，每钱包一枚，只能通过你的币安代理完成。</p>
+    <div class="hero-art">
+      <figure><img src="/art/demo-101.svg" alt="Clean commit artwork"><figcaption class="mono" data-zh="示例 · 干净 (Clean)" data-en="Sample · Clean">示例 · 干净 (Clean)</figcaption></figure>
+      <figure><img src="/art/demo-202.svg" alt="Conflict commit artwork"><figcaption class="mono" data-zh="示例 · 冲突 (Conflict)" data-en="Sample · Conflict">示例 · 冲突 (Conflict)</figcaption></figure>
+      <figure><img src="/art/demo-303.svg" alt="Merge commit artwork"><figcaption class="mono" data-zh="示例 · 合并 (Merge) · 含隐藏信息" data-en="Sample · Merge · carries a hidden message">示例 · 合并 (Merge) · 含隐藏信息</figcaption></figure>
+    </div>
+  </div>
+
+  <section id="mint">
+    <div class="sec-head"><span class="sec-no mono">01</span><h2 data-zh="铸造" data-en="Mint">铸造</h2></div>
+    <p class="sec-desc" data-zh="本站没有铸造按钮，也不需要连接钱包。铸造完全通过你的币安智能钱包代理完成，持有币安 Agent ID 即可。价格为零，平台佣金为零。" data-en="This site has no mint button and no wallet connect. Minting runs entirely through your Binance Agentic Wallet agent and needs a Binance Agent ID. Price is zero and the platform fee is zero.">本站没有铸造按钮，也不需要连接钱包。铸造完全通过你的币安智能钱包代理完成，持有币安 Agent ID 即可。价格为零，平台佣金为零。</p>
+    <div class="ledger mono">
+      <div><div class="k" data-zh="已铸造" data-en="Minted">已铸造</div><div class="v" id="ledMinted">...</div></div>
+      <div><div class="k" data-zh="总供应" data-en="Supply">总供应</div><div class="v" id="ledSupply">3,232</div></div>
+      <div><div class="k" data-zh="剩余" data-en="Remaining">剩余</div><div class="v" id="ledLeft">...</div></div>
+      <div><div class="k" data-zh="价格" data-en="Price">价格</div><div class="v" data-zh="免费" data-en="Free">免费</div></div>
+      <div><div class="k" data-zh="状态" data-en="Status">状态</div><div class="v"><span class="pill soon" id="mintPill">...</span></div></div>
+    </div>
+    <div class="panel">
+      <p class="mono" style="font-size:13.5px;color:var(--mute)" data-zh="给你的代理发送这段话：" data-en="Send this to your agent:">给你的代理发送这段话：</p>
+      <div class="prompt-box"><code id="promptText"></code></div>
+      <button class="copy-btn" id="copyBtn" onclick="copyPrompt()" data-zh="复制提示词" data-en="Copy prompt">复制提示词</button>
+      <p style="margin-top:14px;font-size:14px;color:var(--mute)"><span data-zh="代理说明文件：" data-en="Agent skill file: ">代理说明文件：</span><a href="/gitskit-skill.md">gitskit-skill.md</a></p>
+    </div>
+  </section>
+
+  <section id="referrals">
+    <div class="sec-head"><span class="sec-no mono">02</span><h2 data-zh="邀请" data-en="Referrals">邀请</h2></div>
+    <p class="sec-desc" data-zh="每次铸造可以填写一位邀请人。邀请记录保存在链上，不会增加铸造名额（每钱包始终限 1 枚），但会在 $GIT 阶段变成真金白银：售罄后，每次成功邀请为邀请人增加 25,000 $GIT 的可领取额度，基础额度为每枚 NFT 250,000 $GIT。" data-en="Every mint can name one referrer. Invites are recorded on chain. They never raise the mint limit (always one per wallet), but they pay out in the $GIT phase: after sellout, each successful invite adds 25,000 $GIT to the referrer's claimable bonus, on top of 250,000 $GIT per NFT.">每次铸造可以填写一位邀请人。邀请记录保存在链上，不会增加铸造名额（每钱包始终限 1 枚），但会在 $GIT 阶段变成真金白银：售罄后，每次成功邀请为邀请人增加 25,000 $GIT 的可领取额度，基础额度为每枚 NFT 250,000 $GIT。</p>
+    <div class="panel">
+      <p class="mono" style="font-size:13.5px;color:var(--mute);margin-bottom:10px" data-zh="查询钱包" data-en="Check a wallet">查询钱包</p>
+      <div class="check">
+        <input id="walletInput" placeholder="0x..." spellcheck="false">
+        <button onclick="checkWallet()" data-zh="查询" data-en="Check">查询</button>
+      </div>
+      <div class="check-result mono" id="checkResult"></div>
+    </div>
+  </section>
+
+  <section id="market">
+    <div class="sec-head"><span class="sec-no mono">03</span><h2 data-zh="市场" data-en="Market">市场</h2></div>
+    <p class="sec-desc" data-zh="二级交易在 Element 上进行，BNB Chain 的 NFT 市场。从第一天就开放入口。" data-en="Secondary trading happens on Element, the BNB Chain NFT marketplace. The door is open from day one.">二级交易在 Element 上进行，BNB Chain 的 NFT 市场。从第一天就开放入口。</p>
+    <a class="btn" href="https://element.market/collections/gitskit" target="_blank" rel="noopener" data-zh="在 Element 上交易" data-en="Trade on Element">在 Element 上交易</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row mono">
+      <span>GITSKIT · BNB CHAIN</span>
+      <a href="/guide" data-zh="指南" data-en="Guide">指南</a>
+      <a href="/gitskit-skill.md" data-zh="代理说明" data-en="Agent skill">代理说明</a>
+    </div>
+    <p class="mono addr" style="margin-top:12px">NFT 0x6599058E3BA6d8a94515c4d28EeEFE815c373706</p>
+  </div>
+</footer>
+
+<script src="/chain.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
